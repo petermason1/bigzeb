@@ -3,79 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big Zeb - Modern Web App</title>
+    <title>Big Zeb - Personal Training, Sports Science & Horse Racing</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Big Zeb</div>
+            <ul class="nav-menu">
+                <li><a href="#training">Training</a></li>
+                <li><a href="#racing">Racing</a></li>
+                <li><a href="#horses">Own a Horse</a></li>
+                <li><a href="#wildlife">Wildlife</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
-        <header>
-            <h1>Welcome to Big Zeb</h1>
-            <p class="subtitle">A modern web application</p>
-        </header>
-        
-        <main>
-            <section class="card">
-                <h2>Interactive Counter</h2>
-                <div class="counter-display">
-                    <span id="counter-value">0</span>
+        <!-- Section 1: Personal Training & Sports Science -->
+        <section id="training" class="hero-section training-section">
+            <div class="hero-content">
+                <h1>Personal Training & Sports Science</h1>
+                <p class="hero-subtitle">Expert guidance for peak performance and optimal health</p>
+                <div class="hero-cards">
+                    <div class="feature-card">
+                        <div class="icon">💪</div>
+                        <h3>Personal Training</h3>
+                        <p>Tailored fitness programs designed to meet your individual goals. One-on-one coaching for maximum results.</p>
+                        <ul class="feature-list">
+                            <li>Custom workout plans</li>
+                            <li>Nutrition guidance</li>
+                            <li>Progress tracking</li>
+                            <li>Flexible scheduling</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🔬</div>
+                        <h3>Sports Science Advice</h3>
+                        <p>Evidence-based training methods backed by the latest sports science research.</p>
+                        <ul class="feature-list">
+                            <li>Biomechanics analysis</li>
+                            <li>Performance optimization</li>
+                            <li>Injury prevention</li>
+                            <li>Recovery strategies</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="button-group">
-                    <button id="decrement-btn" class="btn btn-secondary">-</button>
-                    <button id="reset-btn" class="btn btn-outline">Reset</button>
-                    <button id="increment-btn" class="btn btn-primary">+</button>
+                <button class="cta-button">Get Started Today</button>
+            </div>
+        </section>
+
+        <!-- Section 2: Horse Racing Tips & Business -->
+        <section id="racing" class="hero-section racing-section">
+            <div class="hero-content">
+                <h1>Horse Racing Tips & Business Growth</h1>
+                <p class="hero-subtitle">Expert insights to improve your racing knowledge and grow your business</p>
+                <div class="hero-cards">
+                    <div class="feature-card">
+                        <div class="icon">🏇</div>
+                        <h3>Horse Racing Tips</h3>
+                        <p>Professional analysis and tips to help you make informed betting decisions.</p>
+                        <ul class="feature-list">
+                            <li>Daily race analysis</li>
+                            <li>Form guides and statistics</li>
+                            <li>Jockey and trainer insights</li>
+                            <li>Track condition analysis</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">📈</div>
+                        <h3>Grow Your Horse Racing Business</h3>
+                        <p>Strategic advice to expand and develop your horse racing enterprise.</p>
+                        <ul class="feature-list">
+                            <li>Business development strategies</li>
+                            <li>Marketing and branding</li>
+                            <li>Partnership opportunities</li>
+                            <li>Industry networking</li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
-            
-            <section class="card">
-                <h2>Color Theme</h2>
-                <div class="color-picker-group">
-                    <button class="theme-btn" data-theme="blue" style="background: #3b82f6;"></button>
-                    <button class="theme-btn" data-theme="green" style="background: #10b981;"></button>
-                    <button class="theme-btn" data-theme="purple" style="background: #8b5cf6;"></button>
-                    <button class="theme-btn" data-theme="red" style="background: #ef4444;"></button>
-                    <button class="theme-btn" data-theme="orange" style="background: #f97316;"></button>
+                <button class="cta-button">View Racing Tips</button>
+            </div>
+        </section>
+
+        <!-- Section 3: Buy Your Own Race Horse -->
+        <section id="horses" class="hero-section horses-section">
+            <div class="hero-content">
+                <h1>Own Your Own Race Horse</h1>
+                <p class="hero-subtitle">Realize your dream of racehorse ownership</p>
+                <div class="ownership-cards">
+                    <div class="ownership-card">
+                        <div class="icon">🐎</div>
+                        <h3>Why Own a Racehorse?</h3>
+                        <p>Experience the thrill of ownership, from training to race day. Be part of the action and share in the success.</p>
+                    </div>
+                    <div class="ownership-card">
+                        <div class="icon">💰</div>
+                        <h3>Investment Opportunities</h3>
+                        <p>Various ownership models available, from full ownership to syndicate shares. Find the option that suits you.</p>
+                    </div>
+                    <div class="ownership-card">
+                        <div class="icon">🏆</div>
+                        <h3>What's Included</h3>
+                        <ul class="ownership-list">
+                            <li>Regular updates on your horse</li>
+                            <li>Race day access and hospitality</li>
+                            <li>Training yard visits</li>
+                            <li>Prize money share</li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
-            
-            <section class="card">
-                <h2>Message Display</h2>
-                <input type="text" id="message-input" placeholder="Enter a message..." class="input-field">
-                <button id="display-btn" class="btn btn-primary">Display Message</button>
-                <div id="message-display" class="message-display"></div>
-            </section>
-            
-            <section class="card">
-                <h2>🎵 Music Player</h2>
-                <div class="music-controls">
-                    <input type="file" id="music-file" accept="audio/*" class="file-input">
-                    <label for="music-file" class="btn btn-primary file-label">Choose Music File</label>
-                    <audio id="audio-player" controls style="width: 100%; margin-top: 1rem; display: none;"></audio>
-                    <div id="music-status" class="music-status"></div>
+                <div class="contact-form">
+                    <h3>Interested in Ownership?</h3>
+                    <form id="ownership-form">
+                        <input type="text" placeholder="Your Name" class="form-input" required>
+                        <input type="email" placeholder="Your Email" class="form-input" required>
+                        <input type="tel" placeholder="Phone Number" class="form-input">
+                        <textarea placeholder="Tell us about your interest..." class="form-textarea" rows="4"></textarea>
+                        <button type="submit" class="cta-button">Request Information</button>
+                    </form>
                 </div>
-            </section>
-            
-            <section class="card">
-                <h2>Kno What A Mean Counter</h2>
-                <div class="kno-counter-display">
-                    <span id="kno-counter-value">0</span>
+            </div>
+        </section>
+
+        <!-- Section 4: Wildlife Trust - Save Red Squirrels -->
+        <section id="wildlife" class="hero-section wildlife-section">
+            <div class="hero-content">
+                <h1>Wildlife Trust - Save Red Squirrels</h1>
+                <p class="hero-subtitle">Protecting Britain's native red squirrels for future generations</p>
+                <div class="wildlife-content">
+                    <div class="wildlife-info">
+                        <div class="wildlife-card">
+                            <div class="icon">🐿️</div>
+                            <h3>The Red Squirrel Crisis</h3>
+                            <p>Red squirrels are one of Britain's most endangered mammals. Habitat loss and competition from grey squirrels have dramatically reduced their numbers. We need your help to protect these beautiful creatures.</p>
+                        </div>
+                        <div class="wildlife-card">
+                            <div class="icon">🌳</div>
+                            <h3>What We Do</h3>
+                            <ul class="wildlife-list">
+                                <li>Habitat conservation and restoration</li>
+                                <li>Grey squirrel management programs</li>
+                                <li>Red squirrel monitoring and research</li>
+                                <li>Public education and awareness</li>
+                                <li>Community engagement initiatives</li>
+                            </ul>
+                        </div>
+                        <div class="wildlife-card">
+                            <div class="icon">❤️</div>
+                            <h3>How You Can Help</h3>
+                            <ul class="wildlife-list">
+                                <li>Make a donation to support our work</li>
+                                <li>Volunteer for conservation projects</li>
+                                <li>Report red squirrel sightings</li>
+                                <li>Spread awareness in your community</li>
+                                <li>Adopt a red squirrel</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="donation-box">
+                        <h3>Make a Donation</h3>
+                        <p>Every contribution helps protect red squirrels</p>
+                        <div class="donation-amounts">
+                            <button class="donation-btn">£10</button>
+                            <button class="donation-btn">£25</button>
+                            <button class="donation-btn">£50</button>
+                            <button class="donation-btn">£100</button>
+                        </div>
+                        <input type="number" placeholder="Custom Amount" class="form-input" min="1">
+                        <button class="cta-button">Donate Now</button>
+                    </div>
                 </div>
-                <button id="kno-btn" class="btn btn-primary">Kno What A Mean!</button>
-                <p class="kno-subtitle">Click to add to the count, kno what a mean?</p>
-            </section>
-            
-            <section class="card rogers-card">
-                <h2>🦖 Rogers Proafanersaurus Generator</h2>
-                <p class="rogers-intro">A Wiganer who talks like a Geordie, supports Man Utd, and kno what a mean?</p>
-                <button id="generate-rogers-btn" class="btn btn-primary">Generate Rogers Saying</button>
-                <div id="rogers-saying" class="rogers-saying"></div>
-                <div class="man-utd-badge">🔴⚪⚫ Man Utd Supporter ⚫⚪🔴</div>
-            </section>
-        </main>
-        
-        <footer>
-            <p>&copy; 2024 Big Zeb. Built with HTML, CSS, and JavaScript.</p>
-        </footer>
+            </div>
+        </section>
     </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Big Zeb. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#training">Training</a>
+                <a href="#racing">Racing</a>
+                <a href="#horses">Own a Horse</a>
+                <a href="#wildlife">Wildlife Trust</a>
+            </div>
+        </div>
+    </footer>
     
     <script src="script.js"></script>
 </body>

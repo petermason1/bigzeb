@@ -1,203 +1,135 @@
-// Counter functionality
-let counter = 0;
-const counterValue = document.getElementById('counter-value');
-const incrementBtn = document.getElementById('increment-btn');
-const decrementBtn = document.getElementById('decrement-btn');
-const resetBtn = document.getElementById('reset-btn');
-
-incrementBtn.addEventListener('click', () => {
-    counter++;
-    updateCounter();
+// Smooth scroll for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
 });
 
-decrementBtn.addEventListener('click', () => {
-    counter--;
-    updateCounter();
-});
-
-resetBtn.addEventListener('click', () => {
-    counter = 0;
-    updateCounter();
-});
-
-function updateCounter() {
-    counterValue.textContent = counter;
-    counterValue.style.transform = 'scale(1.2)';
-    setTimeout(() => {
-        counterValue.style.transform = 'scale(1)';
-    }, 200);
+// Ownership form submission
+const ownershipForm = document.getElementById('ownership-form');
+if (ownershipForm) {
+    ownershipForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(ownershipForm);
+        const data = Object.fromEntries(formData);
+        
+        // Show success message
+        alert('Thank you for your interest! We will contact you soon about racehorse ownership opportunities.');
+        ownershipForm.reset();
+    });
 }
 
-// Theme color functionality
-const themeButtons = document.querySelectorAll('.theme-btn');
-const root = document.documentElement;
+// Donation functionality
+const donationButtons = document.querySelectorAll('.donation-btn');
+const customDonationInput = document.querySelector('.donation-box input[type="number"]');
+const donateNowButton = document.querySelector('.donation-box .cta-button');
 
-themeButtons.forEach(button => {
+donationButtons.forEach(button => {
     button.addEventListener('click', () => {
-        const theme = button.getAttribute('data-theme');
-        const color = getComputedStyle(button).backgroundColor;
+        // Remove active state from all buttons
+        donationButtons.forEach(btn => {
+            btn.style.background = 'rgba(255, 255, 255, 0.2)';
+            btn.style.color = 'white';
+        });
         
-        // Remove active class from all buttons
-        themeButtons.forEach(btn => btn.classList.remove('active'));
-        // Add active class to clicked button
-        button.classList.add('active');
+        // Set active state
+        button.style.background = 'white';
+        button.style.color = 'var(--text-primary)';
         
-        // Update CSS variable
-        root.style.setProperty('--primary-color', color);
+        // Set custom input value
+        if (customDonationInput) {
+            customDonationInput.value = button.textContent.replace('£', '');
+        }
     });
 });
 
-// Set default theme (blue)
-document.querySelector('.theme-btn[data-theme="blue"]').classList.add('active');
+if (donateNowButton) {
+    donateNowButton.addEventListener('click', () => {
+        const amount = customDonationInput?.value || 'selected amount';
+        alert(`Thank you for your donation of £${amount}! Your contribution helps protect red squirrels.`);
+        if (customDonationInput) {
+            customDonationInput.value = '';
+        }
+        donationButtons.forEach(btn => {
+            btn.style.background = 'rgba(255, 255, 255, 0.2)';
+            btn.style.color = 'white';
+        });
+    });
+}
 
-// Message display functionality
-const messageInput = document.getElementById('message-input');
-const displayBtn = document.getElementById('display-btn');
-const messageDisplay = document.getElementById('message-display');
+// Animate sections on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
 
-displayBtn.addEventListener('click', () => {
-    const message = messageInput.value.trim();
-    if (message) {
-        messageDisplay.textContent = message;
-        messageDisplay.classList.add('has-message');
-    } else {
-        messageDisplay.textContent = 'No message entered';
-        messageDisplay.classList.remove('has-message');
-    }
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe all hero sections
+document.querySelectorAll('.hero-section').forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(section);
 });
 
-// Allow Enter key to submit message
-messageInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        displayBtn.click();
-    }
-});
-
-// Music player functionality
-const musicFileInput = document.getElementById('music-file');
-const audioPlayer = document.getElementById('audio-player');
-const musicStatus = document.getElementById('music-status');
-
-musicFileInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (file) {
-        const url = URL.createObjectURL(file);
-        audioPlayer.src = url;
-        audioPlayer.style.display = 'block';
-        musicStatus.textContent = `Now playing: ${file.name}`;
-        musicStatus.style.color = 'var(--primary-color)';
-    }
-});
-
-// Kno What A Mean Counter
-let knoCounter = 0;
-const knoCounterValue = document.getElementById('kno-counter-value');
-const knoBtn = document.getElementById('kno-btn');
-
-knoBtn.addEventListener('click', () => {
-    knoCounter++;
-    knoCounterValue.textContent = knoCounter;
-    knoCounterValue.style.transform = 'scale(1.3)';
-    knoCounterValue.style.color = '#ef4444';
-    setTimeout(() => {
-        knoCounterValue.style.transform = 'scale(1)';
-        knoCounterValue.style.color = 'var(--primary-color)';
-    }, 300);
-});
-
-// Rogers Proafanersaurus Generator
-const wiganSayings = [
-    "chuffed to bits",
-    "proper mint",
-    "dead good",
-    "sound as a pound",
-    "bobbins",
-    "mithering",
-    "gobsmacked",
-    "champion",
-    "cracking",
-    "brilliant",
-    "mega",
-    "boss",
-    "ace",
-    "smashing",
-    "belter"
-];
-
-const geordieSayings = [
-    "canny",
-    "divvent",
-    "gan",
-    "hinny",
-    "pet",
-    "whey aye",
-    "howay",
-    "bairn",
-    "gadgie",
-    "clarts",
-    "bait",
-    "netty",
-    "cushdy",
-    "radge",
-    "belta"
-];
-
-const manUtdReferences = [
-    "like Man Utd winning the league",
-    "better than watching the Red Devils",
-    "proper Man Utd that",
-    "as good as a Ronaldo goal",
-    "champion like Fergie",
-    "red through and through",
-    "Old Trafford quality",
-    "United way"
-];
-
-const rogersTemplates = [
-    "That's {wigan} {geordie}, {manutd}, kno what a mean?",
-    "Whey aye, that's {wigan} {geordie} that, {manutd}!",
-    "{geordie} {wigan}, {manutd}, kno what a mean?",
-    "Howay man, that's {wigan} {geordie}, {manutd}!",
-    "{wigan} {geordie} that, {manutd}, kno what a mean?",
-    "Canny {wigan} {geordie}, {manutd}!",
-    "{geordie} {wigan} that, {manutd}, kno what a mean?",
-    "That's {wigan} {geordie}, {manutd}, hinny!"
-];
-
-const generateRogersBtn = document.getElementById('generate-rogers-btn');
-const rogersSaying = document.getElementById('rogers-saying');
-
-generateRogersBtn.addEventListener('click', () => {
-    const wigan = wiganSayings[Math.floor(Math.random() * wiganSayings.length)];
-    const geordie = geordieSayings[Math.floor(Math.random() * geordieSayings.length)];
-    const manutd = manUtdReferences[Math.floor(Math.random() * manUtdReferences.length)];
-    const template = rogersTemplates[Math.floor(Math.random() * rogersTemplates.length)];
-    
-    let saying = template
-        .replace('{wigan}', wigan)
-        .replace('{geordie}', geordie)
-        .replace('{manutd}', manutd);
-    
-    rogersSaying.textContent = saying;
-    rogersSaying.style.opacity = '0';
-    rogersSaying.style.transform = 'translateY(10px)';
-    setTimeout(() => {
-        rogersSaying.style.transition = 'opacity 0.3s, transform 0.3s';
-        rogersSaying.style.opacity = '1';
-        rogersSaying.style.transform = 'translateY(0)';
-    }, 10);
-});
-
-// Add smooth animations
-document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
+// CTA button interactions
+document.querySelectorAll('.cta-button').forEach(button => {
+    button.addEventListener('click', function(e) {
+        // Add ripple effect
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        
         setTimeout(() => {
-            card.style.transition = 'opacity 0.5s, transform 0.5s';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, index * 100);
+            ripple.remove();
+        }, 600);
     });
 });
+
+// Add ripple effect styles dynamically
+const style = document.createElement('style');
+style.textContent = `
+    .cta-button {
+        position: relative;
+        overflow: hidden;
+    }
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple-animation 0.6s ease-out;
+        pointer-events: none;
+    }
+    @keyframes ripple-animation {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
