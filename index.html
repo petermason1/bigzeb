@@ -43,6 +43,33 @@
                 <button id="display-btn" class="btn btn-primary">Display Message</button>
                 <div id="message-display" class="message-display"></div>
             </section>
+            
+            <section class="card">
+                <h2>🎵 Music Player</h2>
+                <div class="music-controls">
+                    <input type="file" id="music-file" accept="audio/*" class="file-input">
+                    <label for="music-file" class="btn btn-primary file-label">Choose Music File</label>
+                    <audio id="audio-player" controls style="width: 100%; margin-top: 1rem; display: none;"></audio>
+                    <div id="music-status" class="music-status"></div>
+                </div>
+            </section>
+            
+            <section class="card">
+                <h2>Kno What A Mean Counter</h2>
+                <div class="kno-counter-display">
+                    <span id="kno-counter-value">0</span>
+                </div>
+                <button id="kno-btn" class="btn btn-primary">Kno What A Mean!</button>
+                <p class="kno-subtitle">Click to add to the count, kno what a mean?</p>
+            </section>
+            
+            <section class="card rogers-card">
+                <h2>🦖 Rogers Proafanersaurus Generator</h2>
+                <p class="rogers-intro">A Wiganer who talks like a Geordie, supports Man Utd, and kno what a mean?</p>
+                <button id="generate-rogers-btn" class="btn btn-primary">Generate Rogers Saying</button>
+                <div id="rogers-saying" class="rogers-saying"></div>
+                <div class="man-utd-badge">🔴⚪⚫ Man Utd Supporter ⚫⚪🔴</div>
+            </section>
         </main>
         
         <footer>
@@ -53,4 +80,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
