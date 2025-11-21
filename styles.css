@@ -189,52 +189,52 @@ body {
 }
 
 .training-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     color: white;
 }
 
 .racing-section {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #7c2d12 0%, #dc2626 100%);
     color: white;
 }
 
 .horses-section {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background: linear-gradient(135deg, #065f46 0%, #10b981 100%);
     color: white;
 }
 
 .fasting-section {
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    background: linear-gradient(135deg, #6b21a8 0%, #a855f7 100%);
     color: white;
 }
 
 .wildlife-section {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #78350f 0%, #f59e0b 100%);
     color: white;
 }
 
 .recovery-section {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    background: linear-gradient(135deg, #0c4a6e 0%, #0284c7 100%);
     color: white;
 }
 
 .swimming-section {
-    background: linear-gradient(135deg, #00c9ff 0%, #92fe9d 100%);
+    background: linear-gradient(135deg, #164e63 0%, #06b6d4 100%);
     color: white;
 }
 
 .business-section {
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
     color: white;
 }
 
 .golf-section {
-    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+    background: linear-gradient(135deg, #14532d 0%, #22c55e 100%);
     color: white;
 }
 
 .adverts-section {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    background: linear-gradient(135deg, #7c2d12 0%, #f97316 100%);
     color: white;
 }
 
@@ -247,13 +247,16 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     text-align: center;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
     text-align: center;
     margin-bottom: 3rem;
-    opacity: 0.95;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-cards {
@@ -264,17 +267,19 @@ body {
 }
 
 .feature-card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
     padding: 2rem;
     border-radius: 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .feature-card .icon {
@@ -286,11 +291,15 @@ body {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: white;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .feature-card p {
     margin-bottom: 1rem;
-    opacity: 0.95;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.7;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .feature-list {
@@ -302,14 +311,17 @@ body {
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .feature-list li::before {
     content: "✓";
     position: absolute;
     left: 0;
-    color: #10b981;
+    color: #86efac;
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
 .cta-button {
@@ -342,12 +354,19 @@ body {
 }
 
 .ownership-card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
     padding: 2rem;
     border-radius: 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.ownership-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .ownership-card .icon {
@@ -359,6 +378,13 @@ body {
     font-size: 1.25rem;
     margin-bottom: 1rem;
     color: white;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ownership-card p {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .ownership-list {
@@ -371,6 +397,8 @@ body {
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .ownership-list li::before {
@@ -380,13 +408,13 @@ body {
 }
 
 .contact-form {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
     padding: 2rem;
     border-radius: 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     max-width: 600px;
     margin: 0 auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .contact-form h3 {
@@ -433,11 +461,18 @@ body {
 }
 
 .wildlife-card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
     padding: 2rem;
     border-radius: 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.wildlife-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .wildlife-card .icon {
@@ -449,6 +484,13 @@ body {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: white;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.wildlife-card p {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .wildlife-list {
@@ -460,6 +502,8 @@ body {
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .wildlife-list li::before {
@@ -469,12 +513,12 @@ body {
 }
 
 .donation-box {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
     padding: 2rem;
     border-radius: 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .donation-box h3 {
@@ -558,31 +602,44 @@ body {
 
 .diets-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     margin-bottom: 3rem;
 }
 
+@media (max-width: 1024px) {
+    .diets-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .diets-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .diet-card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
     padding: 1.5rem;
     border-radius: 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
     cursor: pointer;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .diet-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
     border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .diet-card.active {
-    border-color: white;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
 }
 
 .diet-card .icon {
@@ -596,13 +653,16 @@ body {
     margin-bottom: 0.75rem;
     color: white;
     text-align: center;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .diet-card p {
     margin-bottom: 1rem;
-    opacity: 0.95;
+    color: rgba(255, 255, 255, 0.95);
     text-align: center;
     font-size: 0.9rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .diet-features {
@@ -616,6 +676,8 @@ body {
     padding-left: 1.5rem;
     position: relative;
     font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .diet-features li::before {
@@ -628,12 +690,12 @@ body {
 
 /* Meal Plan Generator */
 .meal-plan-generator {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
     padding: 2rem;
     border-radius: 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     margin-top: 3rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .meal-plan-generator h3 {
@@ -894,17 +956,19 @@ body {
 }
 
 .safety-card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
     padding: 1.5rem;
     border-radius: 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .safety-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .safety-card .icon {
@@ -918,6 +982,8 @@ body {
     margin-bottom: 1rem;
     color: white;
     text-align: center;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .safety-list {
@@ -930,6 +996,8 @@ body {
     padding-left: 1.5rem;
     position: relative;
     font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .safety-list li::before {
@@ -1002,26 +1070,32 @@ body {
 }
 
 .service-item {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.4);
     padding: 1.5rem;
     border-radius: 0.75rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
-    transition: transform 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .service-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .service-item h4 {
     color: white;
     margin-bottom: 0.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .service-item p {
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.95);
     font-size: 0.9rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Golf Section Styles */
@@ -1100,17 +1174,19 @@ body {
 }
 
 .advert-card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.4);
     padding: 2rem;
     border-radius: 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .advert-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .advert-card .icon {
@@ -1123,6 +1199,13 @@ body {
     color: white;
     margin-bottom: 1rem;
     text-align: center;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.advert-card p {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Design */
