@@ -238,6 +238,56 @@ body {
     color: white;
 }
 
+.rogers-section {
+    background: linear-gradient(135deg, #6b21a8 0%, #a855f7 100%);
+    color: white;
+}
+
+.rogers-generator {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.rogers-saying {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.rogers-saying:empty::before {
+    content: "Click the button to generate a saying...";
+    opacity: 0.6;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.man-utd-badge {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 .hero-content {
     padding: 2rem;
 }
