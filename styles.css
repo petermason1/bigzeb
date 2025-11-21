@@ -263,39 +263,83 @@ body {
     background: rgba(0, 0, 0, 0.4);
     border-radius: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    overflow: hidden;
+    overflow: visible;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.horse-card:nth-child(1) {
+    transform: rotate(-2deg);
+}
+
+.horse-card:nth-child(2) {
+    transform: rotate(1.5deg);
+}
+
+.horse-card:nth-child(3) {
+    transform: rotate(-1deg);
+}
+
+.horse-card:nth-child(4) {
+    transform: rotate(2deg);
 }
 
 .horse-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) rotate(0deg) !important;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
     border-color: rgba(255, 255, 255, 0.4);
     background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
 }
 
 .horse-image {
     width: 100%;
     min-height: 300px;
-    overflow: hidden;
+    overflow: visible;
     background: linear-gradient(135deg, rgba(220, 38, 38, 0.3) 0%, rgba(251, 191, 36, 0.3) 100%);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 1.5rem;
+}
+
+.horse-card:nth-child(1) .horse-image img {
+    max-width: 95%;
+    max-height: 380px;
+    transform: rotate(1deg);
+}
+
+.horse-card:nth-child(2) .horse-image img {
+    max-width: 100%;
+    max-height: 400px;
+    transform: rotate(-0.5deg);
+}
+
+.horse-card:nth-child(3) .horse-image img {
+    max-width: 90%;
+    max-height: 370px;
+    transform: rotate(1.5deg);
+}
+
+.horse-card:nth-child(4) .horse-image img {
+    max-width: 98%;
+    max-height: 390px;
+    transform: rotate(-1deg);
 }
 
 .horse-image img {
-    max-width: 100%;
-    max-height: 400px;
     width: auto;
     height: auto;
     object-fit: contain;
     object-position: center;
     transition: transform 0.3s ease;
     display: block;
+}
+
+.horse-card:hover .horse-image img {
+    transform: rotate(0deg) scale(1.05) !important;
 }
 
 .horse-placeholder {
