@@ -239,9 +239,75 @@ body {
     color: white;
 }
 
+.horses-featured-section {
+    background: linear-gradient(135deg, #991b1b 0%, #dc2626 50%, #fbbf24 100%);
+    color: white;
+}
+
 .horses-section {
     background: linear-gradient(135deg, #065f46 0%, #10b981 100%);
     color: white;
+}
+
+.horses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.horse-card {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.horse-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.horse-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.horse-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.horse-card:hover .horse-image img {
+    transform: scale(1.1);
+}
+
+.horse-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.horse-info h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    color: white;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.horse-info p {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
 }
 
 .fasting-section {
