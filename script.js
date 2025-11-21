@@ -118,3 +118,54 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Load racing silk from JSON file
+async function loadRacingSilk() {
+    try {
+        const response = await fetch('2025-11-21-racecards.scored.json');
+        const data = await response.json();
+        
+        // Look for a red and gold silk, or use the first available silk
+        // Search for Brocade Racing or any red/gold pattern
+        let silkUrl = null;
+        
+        // First, try to find Brocade Racing (which might have red/gold)
+        for (const racecard of data.racecards || []) {
+            for (const runner of racecard.runners || []) {
+                if (runner.owner && runner.owner.includes('Brocade')) {
+                    silkUrl = runner.silk_url;
+                    break;
+                }
+            }
+            if (silkUrl) break;
+        }
+        
+        // If not found, use the first silk in the file
+        if (!silkUrl && data.racecards && data.racecards[0] && data.racecards[0].runners && data.racecards[0].runners[0]) {
+            silkUrl = data.racecards[0].runners[0].silk_url;
+        }
+        
+        // Set the silk image
+        const silkImg = document.getElementById('racing-silk');
+        if (silkImg && silkUrl) {
+            silkImg.src = silkUrl;
+            silkImg.style.display = 'block';
+        }
+    } catch (error) {
+        console.error('Error loading racing silk:', error);
+        // Fallback to a default red and gold silk URL if JSON fails
+        const silkImg = document.getElementById('racing-silk');
+        if (silkImg) {
+            // Use Brocade Racing silk as fallback (red and gold pattern)
+            silkImg.src = 'https://www.rp-assets.com/svg/8/8/7/162788.svg';
+            silkImg.style.display = 'block';
+        }
+    }
+}
+
+// Load silk on page load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadRacingSilk);
+} else {
+    loadRacingSilk();
+}

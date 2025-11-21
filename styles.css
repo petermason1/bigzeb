@@ -54,32 +54,16 @@ body {
     gap: 1rem;
 }
 
-.racing-silks {
+.racing-silk-img {
     width: 50px;
     height: 50px;
-    position: relative;
+    object-fit: contain;
     border-radius: 4px;
-    overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     flex-shrink: 0;
-}
-
-.silk-red {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: #dc2626;
-}
-
-.silk-gold {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: #fbbf24;
+    display: none;
+    background: white;
+    padding: 2px;
 }
 
 .logo {
@@ -1523,7 +1507,7 @@ body {
         font-size: 1.25rem;
     }
 
-    .racing-silks {
+    .racing-silk-img {
         width: 40px;
         height: 40px;
     }
